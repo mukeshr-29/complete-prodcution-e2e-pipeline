@@ -17,6 +17,19 @@ pipeline{
             }
         
         }
+        stage("build application"){
+            steps{
+                sh " mvn clean package"
+            }
+        
+        }
+        stage("test applicatin"){
+            steps{
+                sh " mvn test"
+            }
+        
+        }
+    
     }
 
 }
