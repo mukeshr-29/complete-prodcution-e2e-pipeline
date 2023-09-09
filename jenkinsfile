@@ -41,9 +41,7 @@ pipeline{
         stage("quality gate"){
             steps{
                 script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube'
-                        sh " mvn sonar:sonar"
-                    
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube'                 
                 }
             } 
         }
